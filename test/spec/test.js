@@ -11,3 +11,23 @@
         });
     });
 })();
+
+//Tim's sample from class:
+
+(function () {
+    'use strict';
+ 
+    describe('My String', function(){
+      it('should be a string', function(){
+        var my_string = "The cow jumped over the moon";
+        expect(my_string).to.be.a('string');
+      });
+ 
+      it('should have a length of 28', function(){
+        var my_string = "The cow jumped over the moon";
+        expect(my_string).to.have.length.of(28);
+      });
+      
+    });
+ 
+})();
