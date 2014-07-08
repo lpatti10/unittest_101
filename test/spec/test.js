@@ -1,9 +1,6 @@
 /* global describe, it */
 
 
-
-
-
 (function () {
     'use strict';
 
@@ -34,26 +31,69 @@
 
 })();
 
-  // describe('_map', function () {
-  //   it('should return an array', function () {
-  //     var test = _.map([1, 2, 3], function(num){ return num * 3; });
-  //     expect(test).to.be.an('array');
-  //   });
-  // });
+//Your unit tests should cover everything: 
+//bad arguments, no arguments, values, types and errors.
 
 
 (function () {
-  'use strict';
+	'use strict';
 
   describe('_pluck', function () {
     
-    it('should return array of property values', function () {
+    it('should pass if underscore is installed properly', function () {
+     	var test = _.pluck(stooges, 'name');
+			expect(test).to.exist;
+    });
 
-	     	var test = _.pluck(stooges, 'name');
-				expect(test).to.exist;
+    it('should return an array', function () {
+     	var test = _.pluck(stooges, 'name');
+			expect(test).to.be.an('array');
     });
 
   });
+
+  describe('_last', function () {
+
+    it('should return an object', function () {
+     	var test = _.last(stooges);
+			expect(test).to.be.an('object');
+    });
+
+    it('should not return an array', function () {
+     	var test = _.last(stooges);
+			expect(test).not.to.be.an('array');
+    });
+
+  });
+
+  describe('_first', function () {
+
+    it('should return an object', function () {
+     	var test = _.first(stooges);
+			expect(test).to.be.an('object');
+    });
+
+    it('should never return false', function () {
+     	var test = _.first(stooges);
+			expect(false).to.not.be.ok;
+    });
+
+  });
+
+  describe('_random', function () {
+
+    it('should return a number above zero', function () {
+     	var test = _.random(0, 20);
+			expect(test).to.be.at.least(1);
+    });
+
+		it('should not return a number higher than 19', function () {
+     	var test = _.random(0, 20);
+			expect(test).to.be.at.most(19);
+    });
+
+  });
+
 })();
 
 
